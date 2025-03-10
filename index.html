@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quantum Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ7/Wh81MQ+iG9kfDm+vX68ZWq/ku0kX6UJObpg3BN8mfMARxA6VV/5EUI/uDA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="weather-container" id="weatherContainer">
+        <div class="weather-glow"></div>
+        <div class="app-heading">
+            <span class="app-name">Quantum</span>
+            <span class="app-type">Weather</span>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <button id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        
+        <div id="error"></div>
+        
+        <div class="temperature-section">
+            <div class="temperature" id="tempValue">-</div>
+        </div>
+        
+        <div class="secondary-info">
+            <div class="info-box" id="windBox">
+                <i class="fas fa-wind"></i>
+                <div class="info-value" id="windValue">-</div>
+                <div class="info-label">Wind Speed</div>
+            </div>
+            <div class="info-box" id="humidityBox">
+                <i class="fas fa-tint"></i>
+                <div class="info-value" id="humidityValue">-</div>
+                <div class="info-label">Humidity</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Designed and Developed by Adarsh Dubey</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/adarsh-dubey-048689213" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Adarsh51" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html> 
