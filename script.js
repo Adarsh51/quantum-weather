@@ -41,7 +41,7 @@ async function fetchWeatherData(city) {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
 
         if (!response.ok) {
-            throw new Error('City not found');
+            throw new Error('Oo bhai !! kya spelling dal ra h??');
         }
 
         const data = await response.json();
