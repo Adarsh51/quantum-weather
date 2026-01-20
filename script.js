@@ -22,15 +22,16 @@ const humidityValue = document.getElementById('humidityValue');
 const windValue = document.getElementById('windValue');
 const errorDiv = document.getElementById('error');
 
-searchBtn.addEventListener('click', () => {
+function handleSearch() {
     const city = cityInput.value.trim();
     if (city) fetchWeatherData(city);
-});
+}
+
+searchBtn.addEventListener('click', handleSearch);
 
 cityInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-        const city = cityInput.value.trim();
-        if (city) fetchWeatherData(city);
+        handleSearch();
     }
 });
 
@@ -38,22 +39,22 @@ async function fetchWeatherData(city) {
     try {
         errorDiv.textContent = '';
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
-        
+
         if (!response.ok) {
-            throw new Error('City not found');
+            throw new Error('Oo bhai !! kya spelling dal ra h??');
         }
-        
+
         const data = await response.json();
-        
+
         // Update weather values with animations
         tempValue.style.opacity = 0;
         setTimeout(() => {
             tempValue.textContent = `${Math.round(data.main.temp)}°C`;
             tempValue.style.opacity = 1;
         }, 300);
-        
+
         humidityValue.textContent = `${data.main.humidity}%`;
-        windValue.textContent = `${Math.round(data.wind.speed)} km/h`;
+        windValue.textContent = `${Math.round(data.wind.speed * 3.6)} km/h`;
     } catch (error) {
         errorDiv.textContent = error.message;
         // Reset values on error
@@ -64,4 +65,4 @@ async function fetchWeatherData(city) {
 }
 
 // Initialize particles on load
-createParticles(); 
+createParticles();
